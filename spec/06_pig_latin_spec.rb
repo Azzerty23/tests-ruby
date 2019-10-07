@@ -28,7 +28,7 @@ describe "#translate" do
 
   it "counts 'sch' as a single phoneme" do
     s = translate("school")
-    expect(s).to eq("oolschay")
+    expect(s).to eq("oolschay") # => test non pertinent
   end
 
   it "counts 'qu' as a single phoneme" do
@@ -44,6 +44,11 @@ describe "#translate" do
   it "translates many words" do
     s = translate("the quick brown fox")
     expect(s).to eq("ethay ickquay ownbray oxfay")
+  end
+
+  it "capitalizes former capitalized words" do
+    s = translate("I am a Great cooKer")
+    expect(s).to eq("Iay amay aay Eatgray Ookercay")
   end
 
   # Test-driving bonus:
